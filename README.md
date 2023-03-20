@@ -17,3 +17,6 @@ eMonitor+ is designed to monitor digital media platforms using AI and carry out 
 <B>Phase V:</B> Developing policies and recommendations driven by data and analytics, including developing a sustainability strategy at the national level and creating an environment where information is always collected and exchanged to inform policymaking.
 
 ![Our five phases](https://github.com/MxNaruto/eMonitor-Plus/blob/master/5_phase.png)
+
+
+The platform is founded on the efforts of UNDP Tunisia's electoral assistance project, which has designed and operated the platform since 2019. UNDP Regional Electoral Support project for the MENA region is scaling up the platform globally.   
