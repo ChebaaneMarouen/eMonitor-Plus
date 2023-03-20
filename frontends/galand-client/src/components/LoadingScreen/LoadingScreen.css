@@ -1,0 +1,9 @@
+.centerPage {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+}
+.centerPage h4 {
+  text-align: center;
+  color: #0064b7;
+}

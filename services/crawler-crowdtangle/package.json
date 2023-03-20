@@ -1,0 +1,26 @@
+{
+  "name": "crawler-facebook",
+  "version": "1.0.0",
+  "description": "A crawler for navigating facebook webpages",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "fbgraph": "^1.4.4",
+    "lodash": "^4.17.15",
+    "request": "^2.88.0",
+    "request-promise": "4.2.6",
+    "require-all": "^3.0.0",
+    "node-cron": "2.0.3",
+    "uuid": "8.3.2"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit",
+    "@localPackages/model": "packages/model",
+    "@localPackages/settings": "packages/settings",
+    "@localPackages/logger": "packages/logger"
+  }
+}

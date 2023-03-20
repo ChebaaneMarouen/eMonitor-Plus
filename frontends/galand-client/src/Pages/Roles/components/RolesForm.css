@@ -1,0 +1,9 @@
+.rolesForm .form-check-label {
+    display : inline;
+    margin-right : 50px; 
+    font-weight : normal; 
+}
+
+.rolesForm .input-group {
+    padding-top : 7px
+}

@@ -1,0 +1,28 @@
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+.article-title {
+  overflow: hidden;
+  line-height: 1.5em;
+  height: 3em;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+.ar .inf-to-print {
+  text-align: right !important;
+}

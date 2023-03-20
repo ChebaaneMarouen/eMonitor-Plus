@@ -1,0 +1,81 @@
+version: '3.4'
+
+services : 
+    galand-client :    
+        volumes: 
+            - ../../frontends/galand-client/src:/app/src
+            - ../../frontends/shared:/app/src/@shared
+ 
+    monitor-client : 
+        volumes : 
+            - ../../frontends/monitor/src:/app/src
+            - ../../frontends/shared:/app/src/@shared
+   
+    galand-manager : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/galand-manager:/app    
+            - /app/node_modules    
+
+    crawlers-parser : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawlers-parser:/app    
+            - /app/node_modules    
+
+    crawlers-manager : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawlers-manager:/app    
+            - /app/node_modules    
+
+    crawler-youtube : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-youtube:/app    
+            - /app/node_modules    
+
+    crawler-crowdtangle : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-crowdtangle:/app    
+            - /app/node_modules    
+
+    crawler-twitter : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-twitter:/app    
+            - /app/node_modules     
+
+    crawler-rss : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-rss:/app    
+            - /app/node_modules    
+
+    crawler-puppeteer : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-puppeteer:/app    
+            - /app/node_modules    
+
+
+    crawler-sitemap : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/crawler-sitemap:/app    
+            - /app/node_modules    
+
+    elasticsearch-manager : 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/elasticsearch-manager:/app    
+            - /app/node_modules    
+
+    monitor-server: 
+        entrypoint: ["nodemon","."]
+        volumes: 
+            - ../../services/monitor:/app 
+            - /app/node_modules
+
+  

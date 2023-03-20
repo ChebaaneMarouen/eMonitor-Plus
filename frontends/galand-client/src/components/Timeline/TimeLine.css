@@ -1,0 +1,64 @@
+.timeline-done {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    left: 18px;
+    top: 0;
+}
+.timeline > span>li {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+.timeline-inverse > span> li > .timeline-item > .timeline-header {
+    border-bottom-color: #ddd;
+}
+.timeline > span > li > .timeline-item > .timeline-header {
+    margin: 0;
+    color: #555;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.1;
+}
+.timeline >span > .time-label > span {
+    font-weight: 600;
+    padding: 5px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.timeline-inverse > span > li > .timeline-item {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 3px;
+    margin-top: 0;
+    color: #444;
+    margin-left: 60px;
+    margin-right: 15px;
+    padding: 0;
+    position: relative;
+}
+.timeline > span >li > .timeline-item > .time {
+    color: #999;
+    float: right;
+    padding: 10px;
+    font-size: 12px;
+}
+.timeline-inverse > span> li > .timeline-item > .timeline-header {
+    margin: 0;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.1;
+}
+.timeline > span > li > .timeline-item > .timeline-body, .timeline > li > .timeline-item > .timeline-footer {
+    padding: 10px;
+}

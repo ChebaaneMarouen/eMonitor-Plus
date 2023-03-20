@@ -1,0 +1,106 @@
+version: '3.4'
+
+services :
+    galand-client :
+        build:
+            context : ../../frontends
+            dockerfile: react.Dockerfile
+            args :
+                PROJECT : galand-client
+            target : ${ENVIRONMENT}
+
+    monitor-client :
+        build :
+            context : ../../frontends
+            dockerfile: react.Dockerfile
+            args :
+                PROJECT : monitor
+            target : ${ENVIRONMENT}
+
+    galand-manager :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: galand-manager
+
+    crawlers-parser:
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawlers-parser
+
+    crawlers-manager:
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawlers-manager
+
+    crawler-crowdtangle :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawler-crowdtangle
+
+    crawler-youtube :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawler-youtube
+
+    crawler-twitter :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawler-twitter
+
+    crawler-puppeteer :
+        build :
+            context : ../../services
+            dockerfile : node.puppeteer.Dockerfile
+            args :
+                PROJECT: crawler-puppeteer
+
+
+    crawler-rss :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawler-rss
+
+    crawler-sitemap :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: crawler-sitemap
+
+    elasticsearch-manager :
+        build :
+            context : ../../services
+            dockerfile : node.Dockerfile
+            args :
+                PROJECT: elasticsearch-manager
+
+    monitor-server:
+        build :
+            context : ../../services
+            dockerfile : node.docker.Dockerfile
+            args :
+                PROJECT: monitor
+
+    nginx :
+        build :
+            context : ../../nginx-config
+            args :
+                PROJECT : galand
+    
+    sentiment:
+        build :
+            context : ../../nlpServices/sentiment/

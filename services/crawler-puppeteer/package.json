@@ -1,0 +1,25 @@
+{
+  "name": "crawler-puppeteer",
+  "version": "1.0.0",
+  "description": "A recursive web crawler for navigating the web and extracting articles",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "apify": "^0.20.3",
+    "normalize-url": "^4.5.0",
+    "request": "^2.88.0",
+    "require-all": "^3.0.0",
+    "selenium-webdriver": "3.6.0",
+    "puppeteer":"2.1.1"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit",
+    "@localPackages/model": "packages/model",
+    "@localPackages/settings": "packages/settings",
+    "@localPackages/logger": "packages/logger"
+  }
+}

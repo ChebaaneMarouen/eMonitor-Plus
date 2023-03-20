@@ -1,0 +1,204 @@
+version: '3.4'
+services :
+    galand-client :
+        image : ${REGISTRY_SERVER}/galand-client:${VERSION}
+        environment:
+            - REACT_APP_HOST
+            - EXCEL_COUNT_NUMBER
+        restart : on-failure:3
+
+    monitor-client :
+        image : ${REGISTRY_SERVER}/monitor-client:${VERSION}
+        restart : on-failure:3
+
+    galand-manager :
+        image : ${REGISTRY_SERVER}/galand-manager:${VERSION}
+        volumes:
+            - ${UPLOAD_PATH}:/uploads/
+        depends_on:
+            - rabbitmq
+        environment:
+            - COUCHDB_PASSWORD
+            - DEFAULT_ADMIN_PASSWORD
+            - COUCHDB_SECRET
+            - CHANGE_PASSWORD_ADDR
+            - NODE_ENV=${ENVIRONMENT}
+            - APP_LIMIT
+            - BLOCK_REGISTRATION
+            - AUTH_COOKIE_SECRET
+            - KIBANA_USER
+            - KIBANA_PASSWORD
+            - KIBANA_SECRET_TOKEN
+            - MAIL_HOST
+            - MAIL_PORT
+            - MAIL_SECURE
+            - MAIL_USER=${MANAGER_MAIL_USER}
+            - MAIL_PASS=${MANAGER_MAIL_PASS}
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+            - EXTERNAL_TOKEN
+        restart : always
+
+    crawlers-parser :
+        image : ${REGISTRY_SERVER}/crawlers-parser:${VERSION}
+        environment:
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : on-failure:3
+
+
+    crawlers-manager :
+        image : ${REGISTRY_SERVER}/crawlers-manager:${VERSION}
+        environment:
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : always
+
+
+    crawler-puppeteer :
+        image : ${REGISTRY_SERVER}/crawler-puppeteer:${VERSION}
+        environment:
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+            - APIFY_LOCAL_STORAGE_DIR=/storage
+            - APIFY_HEADLESS=1
+        restart : on-failure:3
+
+    crawler-sitemap :
+        image : ${REGISTRY_SERVER}/crawler-sitemap:${VERSION}
+        environment:
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : on-failure:3
+
+    crawler-rss :
+        image : ${REGISTRY_SERVER}/crawler-rss:${VERSION}
+        environment:
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : on-failure:3
+
+    crawler-youtube :
+        image : ${REGISTRY_SERVER}/crawler-youtube:${VERSION}
+        environment:
+            - GOOGLE_KEY
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : on-failure:3
+
+    crawler-twitter :
+        image : ${REGISTRY_SERVER}/crawler-twitter:${VERSION}
+        environment:
+            - TWITTER_CONSUMER_KEY
+            - TWITTER_CONSUMER_SECRET
+            - TWITTER_ACCESS_TOKEN_KEY
+            - TWITTER_ACCESS_TOKEN_SECRET
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+        restart : on-failure:3
+
+    crawler-crowdtangle :
+        image : ${REGISTRY_SERVER}/crawler-crowdtangle:${VERSION}
+        environment:
+            - FACEBOOK_ACCESS_TOKEN
+            - RABBITMQ_MANAGER_PASS
+            - RABBITMQ_MANAGER_USER
+            - CROWDTANGLE_ACCESS_TOKEN
+            - CROWDTANGLE_SEARCH_ACCOUNTS
+        restart : on-failure:3
+
+    elasticsearch-manager :
+        image : ${REGISTRY_SERVER}/elasticsearch-manager:${VERSION}
+        depends_on:
+            - elasticsearch
+        environment:
+            - RABBITMQ_MANAGER_USER
+            - RABBITMQ_MANAGER_PASS
+        restart : on-failure:3
+
+    monitor-server:
+        image : ${REGISTRY_SERVER}/monitor:${VERSION}
+        depends_on:
+            - rabbitmq
+        environment:
+                - MONITOR_USER=admin
+                - MONITOR_COOKIE_SECRET=iueef45ez85/*fe+zefzfez
+                - MONITOR_PASSWORD
+                - NODE_ENV=${ENVIRONMENT}
+                - LOGS_BUFFER_LENGTH
+                - MAIL_HOST
+                - MAIL_PORT
+                - MAIL_SECURE
+                - MAIL_USER=${MONITOR_MAIL_USER}
+                - MAIL_PASS=${MONITOR_MAIL_PASS}
+                - NOTIFICATION_MAIL_TO
+                - RABBITMQ_MANAGER_PASS
+                - RABBITMQ_MANAGER_USER
+
+        volumes :
+            - ${DOCKER_SOCK_PATH}:/var/run/docker.sock
+        restart : on-failure:3
+
+    nginx:
+        image : ${REGISTRY_SERVER}/nginx:${VERSION}
+        environment :
+            - USE_HTTPS
+            - SSL_CERTIFICATE
+            - SSL_PRIVATE_KEY
+            - DOMAIN_NAME
+            - KIBANA_SECRET_TOKEN
+            - KIBANA_USER
+            - KIBANA_PASSWORD
+        volumes:
+            - ${PATH_TO_SSL_CERTIFICATE}:/etc/nginx/certs/
+        ports :
+            - $HTTP_PORT:80
+            - $HTTPS_PORT:443
+        restart : on-failure:3
+
+    elasticsearch:
+        image : docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
+        volumes:
+            - elasticsearch-data:/usr/share/elasticsearch/data
+        environment :
+            - ELASTIC_PASSWORD
+            - discovery.type=single-node
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 100000
+                hard: 100000
+        cap_add:
+            - IPC_LOCK
+        restart : on-failure:3
+
+    kibana:
+        image: docker.elastic.co/kibana/kibana-oss:7.10.2
+        environment:
+            - SERVER_BASEPATH=/stats
+        depends_on:
+            - elasticsearch
+        restart : on-failure:3
+
+    rabbitmq :
+        image : rabbitmq:3.7.15-management-alpine
+        ports :
+            - $RABBIT_MQ_MANAGER_PORT:15672
+        environment:
+            - RABBITMQ_NODENAME=rabbit@rabbitmq
+            - RABBITMQ_VM_MEMORY_HIGH_WATERMARK=2048MiB
+            - RABBITMQ_DEFAULT_USER=${RABBITMQ_MANAGER_USER}
+            - RABBITMQ_DEFAULT_PASS=${RABBITMQ_MANAGER_PASS}
+        restart : on-failure:3
+
+    sentiment:
+        image : ${REGISTRY_SERVER}/sentiment:${VERSION}
+        #entrypoint: ["echo","classifier ready"]
+
+
+volumes :
+    elasticsearch-data:

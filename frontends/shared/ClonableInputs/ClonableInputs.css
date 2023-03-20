@@ -1,0 +1,18 @@
+.btn-outline-success {
+        color: #28a745;
+            background-color: transparent;
+                background-image: none;
+                    border-color: #28a745;
+                    
+}
+.btn-outline-success:hover {
+        color: #fff;
+            background-color: #28a745;
+                border-color: #28a745;
+                
+}
+
+.btn-center {
+max-width: '300px';
+margin: '0 auto' ;
+}

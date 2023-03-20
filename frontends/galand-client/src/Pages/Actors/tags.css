@@ -1,0 +1,9 @@
+.children-margin-l > div{
+    width: 100%;
+}
+.flexbox-fix{
+    display: none!important;
+}
+.compact-picker{
+    width: 100%!important;
+}

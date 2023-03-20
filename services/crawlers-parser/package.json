@@ -1,0 +1,23 @@
+{
+  "name": "crawlers-parser",
+  "version": "1.0.0",
+  "description": "Will find common ground between crawlers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.6",
+    "require-all": "^3.0.0"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit",
+    "@localPackages/model": "packages/model",
+    "@localPackages/settings": "packages/settings"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "elasticsearch-manager",
+  "version": "1.0.0",
+  "description": "Will handle queries for elasticsearch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "7.13.0",
+    "lodash": "^4.17.15",
+    "require-all": "^3.0.0"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit"
+  }
+}

@@ -1,0 +1,13 @@
+span.success {
+    color : green; 
+}
+
+span.error {
+    color : red ;
+}
+
+span.warning {
+    color: orange
+}
+
+

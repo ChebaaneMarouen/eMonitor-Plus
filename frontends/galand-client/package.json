@@ -1,0 +1,103 @@
+{
+  "name": "galand-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "7.9.6",
+    "@brainhubeu/react-file-input" : "0.9.20",
+    "@fortawesome/fontawesome-svg-core": "1.2.20",
+    "@fortawesome/free-solid-svg-icons": "5.10.0",
+    "@fortawesome/react-fontawesome": "0.1.4",
+    "adminlte-2-react": "git+https://github.com/SabriSelmi/adminlte-customized.git",
+    "axios" : "0.20.0",
+    "cli-truncate" : "3.1.0",
+    "bootstrap": "4.4.1",
+    "draft-js": "0.11.3",
+    "draft-js-export-html": "1.4.1",
+    "draft-js-import-html": "1.4.1",
+    "filepond": "4.5.0",
+    "filepond-plugin-image-exif-orientation": "1.0.6",
+    "filepond-plugin-image-preview": "4.4.0",
+    "filepond-plugin-file-metadata" : "1.0.7",
+    "filepond-plugin-media-preview" : "1.0.11",
+    "html2pdf.js": "0.9.2",
+    "i18next": "19.0.1",
+    "i18next-xhr-backend": "3.2.2",
+    "lodash": "4.17.15",
+    "mdbreact": "4.26.1",
+    "parse-ms": "2.1.0",
+    "prismjs": "1.20.0",
+    "prop-types": "15.7.2",
+    "rc-steps": "3.6.0",
+    "react": "16.8.6",
+    "react-app-polyfill": "1.0.2",
+    "react-bottom-scroll-listener": "3.0.0",
+    "react-color": "2.17.3",
+    "react-cron-builder": "1.0.4",
+    "react-cron-generator": "1.2.1",
+    "react-datepicker": "2.9.6",
+    "react-dev-utils": "10.0.0",
+    "react-dom": "16.8.6",
+    "react-draft-wysiwyg": "1.14.1",
+    "react-dropzone": "10.1.7",
+    "export-from-json" : "1.5.2",
+    "react-facebook": "8.1.4",
+    "react-filepond": "7.0.1",
+    "react-i18next": "11.2.5",
+    "react-notify-toast": "0.5.0",
+    "react-paginate": "6.3.2",
+    "react-player": "2.0.1",
+    "react-redux": "7.1.0",
+    "react-scripts": "3.3.0",
+    "react-select": "3.0.8",
+    "react-simple-code-editor": "0.11.0",
+    "react-simple-timefield": "3.0.0",
+    "react-slick": "0.27.2",
+    "react-switch": "5.0.1",
+    "react-to-print": "2.8.0",
+    "react-wordcloud": "1.1.1",
+    "reactstrap": "8.0.1",
+    "redux": "4.0.4",
+    "redux-persist": "5.10.0",
+    "redux-thunk": "2.3.0",
+    "slick-carousel": "1.8.1",
+    "socket.io-client": "2.2.0",
+    "sweetalert-react": "0.4.11",
+    "react-minimal-pie-chart": "8.0.1",
+    "react-transition-group": "4.4.1",
+    "react-chartjs-2":"4.0.0",
+    "chart.js":"3.6.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "5.10.0",
+    "redux-devtools": "3.5.0"
+  }
+}

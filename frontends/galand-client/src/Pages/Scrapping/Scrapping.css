@@ -1,0 +1,60 @@
+.box.box-facebook {
+  border-color: #3c5a99;
+}
+.box.box-twitter {
+  border-color: #3c5a99;
+}
+
+.article-title {
+  overflow: hidden;
+  /* white-space: nowrap;
+    text-overflow: ellipsis; */
+  line-height: 1.5em;
+  height: 3em;
+  text-align: left;
+  width: 100%;
+}
+
+.ellepsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 450px;
+  margin: 0 auto;
+}
+
+.ar .capitalize {
+  float: right;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(131, 131, 131) !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(172, 172, 172) !important;
+}

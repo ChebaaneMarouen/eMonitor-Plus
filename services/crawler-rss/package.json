@@ -1,0 +1,23 @@
+{
+  "name": "crawler-rss",
+  "version": "1.0.0",
+  "description": "A crawler for navigating the web and extracting articles",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "normalize-url": "^4.5.0",
+    "request": "^2.88.2",
+    "require-all": "^3.0.0",
+    "rss-parser": "^3.7.6"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit",
+    "@localPackages/model": "packages/model",
+    "@localPackages/settings": "packages/settings",
+    "@localPackages/logger": "packages/logger"
+  }
+}

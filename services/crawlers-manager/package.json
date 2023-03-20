@@ -1,0 +1,21 @@
+{
+  "name": "mongodb-manager",
+  "version": "1.0.0",
+  "description": "Will Log events to appropriate databases",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghassen Ochi",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^2.0.3",
+    "require-all": "^3.0.0"
+  },
+  "localDependencies": {
+    "@localPackages/rabbit": "packages/rabbit",
+    "@localPackages/model": "packages/model",
+    "@localPackages/settings": "packages/settings",
+    "@localPackages/logger": "packages/logger"
+  }
+}
