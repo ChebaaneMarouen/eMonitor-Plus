@@ -43,9 +43,11 @@ The main control interface also displays:
 II.	Create a new post
 a.	From Scraping (automatic analyzes)
 ![2](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/2.png)
+
 In this interface, the monitor can consult all the articles collected and analyzed by the 'scraping', by clicking on the "List of Articles" button in the side menu of the home interface,
 Scraping technology is an automated process of extracting and collecting data from websites and/or social media platforms using computer programs. This process is typically set up by the technical supervisor, who configures the program to monitor specific websites and/or social media channels on a regular basis, to extract later, relevant data according to predetermined parameters (identify irregularities, mis/disinformation, hate speech, cyber violence against the minorities, etc.)
 ![3](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/3.png)  
+
 The monitors can define specific search criteria to narrow down the data collection process. 
  
 These criteria include: 
@@ -59,6 +61,7 @@ These criteria include:
 	Automatic analysis for hate speech and cyberviolence detection
 The platform uses an automatic analysis process, based on artificial intelligence to detect instances of hate speech and cyber violence. This process is carried out according to specific parameters set by the technical administrator,
 ![4](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/4.png) 
+
 The automated analysis of the article results in the detection of hate speech or violence against women or minorities in general.
 ![5](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/5.png) 
  
@@ -71,4 +74,5 @@ It can also detect and classify specific types of speech, such as 'insults' whic
  
 Based on the results of the automated analysis, the monitor has the option to either generate a new post or abstain,
 ![7](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/7.png) 
+
 The form is pre-populated by default, and the monitor will complete the remaining fields, or update existing ones, if necessary,
