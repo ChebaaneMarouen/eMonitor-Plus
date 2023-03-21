@@ -1,5 +1,17 @@
 ## **eMonitor+**
+
+![logo](https://github.com/MxNaruto/eMonitor-Plus/blob/master/frontends/galand-client/src/assests/default-logo4.png)
+
 eMonitor+ is designed to monitor digital media platforms using AI and carry out big data analysis to identify misinformation, hate speech, violence against women, electoral campaign violations, political pluralism and polarization, spending on electoral campaign ads, perception and sentiment towards elections, among others. The platform works in four languages, Arabic, English and French, and Spanish and relies on machine learning to track and analyze the content on digital media during elections to generate graphical representations for data visualization and reports.
+
+## **Technical Overview** 
+
+---
+
+
+## **Components** 
+
+----
 
 ## **Our five phases approach**
 <B>Phase I:</B> The methodology of eMonitor+ is driven based on a bottom-up approach that includes forming the core team at the local level and working together to define the scope of the project and the areas of support and topics to be tracked.
@@ -18,8 +30,6 @@ eMonitor+ is designed to monitor digital media platforms using AI and carry out 
 
 ![Our five phases](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/5_phase.png)
 
-
-The platform is founded on the efforts of UNDP Tunisia's electoral assistance project, which has designed and operated the platform since 2019. UNDP Regional Electoral Support project for the MENA region is scaling up the platform globally.   
 
 ## **Presentation**
 
@@ -76,3 +86,70 @@ Based on the results of the automated analysis, the monitor has the option to ei
 ![7](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/7.png) 
 
 The form is pre-populated by default, and the monitor will complete the remaining fields, or update existing ones, if necessary,
+## **Deployment** 
+
+
+**Installation and development** 
+
+* Install <a name="docker-compose">https://docs.docker.com/engine/install/</a> 
+* Go to config folder "compose-apps\apps"
+* If you want to launch all the services
+# sudo docker-compose build
+# sudo docker-compose up -d
+or
+# sudo docker-compose up -d --build name_service
+for example
+# sudo docker-compose up -d --build elasticsearch
+To start our application database service
+# sudo docker-compose up -d --build elasticsearch-manager
+To launch the service that processes requests from our application database
+# sudo docker-compose up -d --build rabbitmq
+To launch our exchange server between services.
+# sudo docker-compose up -d --build galand-client
+To launch the service that manages the interface part of our platform (frontend)
+# sudo docker-compose up -d --build galand-manager
+To launch the service that manages the back-end part of our platform (backend)
+# sudo docker-compose up -d --build nginx
+To launch the service that manages the ports of our platform, you can configure it in the .env file
+
+
+
+**Environment variables**
+
+The apps need a number of environment variables that can be stored in a single `.env` file at the root of the project. This is the list of the variables needed:
+
+HTTP_PORT=the port that will be configured for your platform, for example 8081
+HTTPS_PORT=the port that will be configured on your platform encrypts for example 8082
+DEFAULT_ADMIN_PASSWORD=password of your administrator account tnteap@undp.org
+CHANGE_PASSWORD_ADDR=for configuration of new registration user on this link if your local server you can use this link http://127.0.0.1:8081/register/ otherwise http://DNS:HTTP_PORT/register/
+MAIL_HOST=the smtp method you are going to use, for example gmail smtp.gmail.com
+MAIL_PORT= SMTP port you are going to use like for example 587
+MONITOR_MAIL_USER=transmission configuration email for example e.monitor@undp.org
+MONITOR_MAIL_PASS=your email send configuration password
+MANAGER_MAIL_USER=configuration email for sending management email e.g. e.monitor@undp.org
+MANAGER_MAIL_PASS=password for sending configuration of your management email
+ELASTIC_PASSWORD= password of your elastic database
+KIBANA_USER=ID of your Kibana user
+KIBANA_PASSWORD=KIBANA Password
+KIBANA_SECRET_TOKEN=Kibana Secret Token
+RABBITMQ_MANAGER_USER= ID of your RABBITMQ user
+RABBITMQ_MANAGER_PASS=Password of your RABBITMQ user
+RABBIT_MQ_MANAGER_PORT=Port that will be configured for RABBITMQ by default 15675
+MONITOR_USER=ID of your monitor user which will help you track services
+MONITOR_PASSWORD=Password of your monitor user
+GOOGLE_KEY=token Youtube Data Api https://developers.google.com/youtube/registering_an_application
+FACEBOOK_POSTS_NUMBER=Number of posts analyzed for each request
+FACEBOOK_COMMENTS_NUMBER=For each post number of comments analyze
+CROWDTANGLE_ACCESS_TOKEN=token CROWDTANGLE
+CROWDTANGLE_SEARCH_ACCOUNTS=the list of websites to follow on your platform
+TWITTER_CONSUMER_KEY=Twitter token for usage
+TWITTER_CONSUMER_SECRET=secret Twitter token for use
+TWITTER_ACCESS_TOKEN_KEY=Twitter token for access
+TWITTER_ACCESS_TOKEN_SECRET=Twitter secret token for access
+EXCEL_COUNT_NUMBER= Max number of analyzer positions on the platform that will be uploaded in excel sheet
+EXTERNAL_TOKEN=token for external APIs
+
+The platform is founded on the efforts of UNDP Tunisia's electoral assistance project, which has designed and operated the platform since 2019. UNDP Regional Electoral Support project for the MENA region is scaling up the platform globally.   
+
+
+
