@@ -73,6 +73,7 @@ The platform utilizes an automatic analysis using diffrent open source algorthim
 ![4](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/4.png) 
 
 This process allow monitors and users to classify and filter content using machine learning making the data sample smaller
+
 ![5](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/5.png) 
  
  
