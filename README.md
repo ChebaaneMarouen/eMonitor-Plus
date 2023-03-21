@@ -2,16 +2,9 @@
 
 ![logo](https://github.com/MxNaruto/eMonitor-Plus/blob/master/frontends/galand-client/src/assests/default-logo4.png)
 
-eMonitor+ is designed to monitor digital media platforms using AI and carry out big data analysis to identify misinformation, hate speech, violence against women, electoral campaign violations, political pluralism and polarization, spending on electoral campaign ads, perception and sentiment towards elections, among others. The platform works in four languages, Arabic, English and French, and Spanish and relies on machine learning to track and analyze the content on digital media during elections to generate graphical representations for data visualization and reports.
+eMonitor+ is a suite of digital tools developed by by UNDP’s Regional Bureau of Arab States to monitor digital media platforms using artificial intelligence tools . eMonitor+ deploys fact checking and social listening in tandem, to scans and monitor digital media, flagging issues such as electoral violations, hate speech, political polarization and online violence against women during elections. the platform is already being used by media and electoral commissions in Tunisia, Lebanon and Libya and by CSOs in Peru and currently works in five languages: Arabic, English, French, Spanish and Portuguese.
+eMonitor+ uses artificial intelligence to track and analyse content on digital media, including utilizing various algorithms to, for example, conduct sentiment analysis, topic modelling, hate speech analysis, bots scanning, and reverse image verification of photographic and video sources. The platform relies on machine learning to track and analyse content on digital media, including utilizing various algorithms to, for example, conduct sentiment analysis, topic classification, hate speech analysis, and conduct reverse image and video source verification. 
 
-## **Technical Overview** 
-
----
-
-
-## **Components** 
-
-----
 
 ## **Our five phases approach**
 <B>Phase I:</B> The methodology of eMonitor+ is driven based on a bottom-up approach that includes forming the core team at the local level and working together to define the scope of the project and the areas of support and topics to be tracked.
@@ -31,61 +24,75 @@ eMonitor+ is designed to monitor digital media platforms using AI and carry out 
 ![Our five phases](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/5_phase.png)
 
 
-## **Presentation**
+## **Components**
 
 I.	Dashboard 
-The Monitor's main user interface shows:
-1.	My posts: a library containing the newsgroup processed by the user,
-2.	Assigned Fake News: A library of the newsgroup that the user has been designated to process,
-3.	Posts Infractions (Publication of violations): a library that includes the news that has been processed, with the detection of a violation.
-4.	Monitoring Infractions: This library contains the set of violations that have been added, pending approval,
+Main home page shows:
+1.	My posts: shows all posts anaylzed manually by the user
+2.	My false News: shows all potential false news that have been assigned to the factchecker by the team leader
+3.	Posts violations: allows the monitor to detect electoral violation on social media 
+4.	Monitoring violations: contains a table of all violations that have been added 
 
 ![1](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/1.png)
 
 
 The main control interface also displays:
-5.	Recently added news: a library that displays all the newly added news,
-6.	The latest monitoring violations: a library that includes a list of news through which violations were monitored and reported,
+5.	Recently added news: shows recently collected data from social media platform
+6.	Confirmed electoral violations: containts all the electoral violations that have been already confirmed by the team supervisor 
 
 
 
 
-II.	Create a new post
-a.	From Scraping (automatic analyzes)
+II.	Add new posts
+a.	Social Media Post Scraping and Automated Analysis
 ![2](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/2.png)
 
-In this interface, the monitor can consult all the articles collected and analyzed by the 'scraping', by clicking on the "List of Articles" button in the side menu of the home interface,
-Scraping technology is an automated process of extracting and collecting data from websites and/or social media platforms using computer programs. This process is typically set up by the technical supervisor, who configures the program to monitor specific websites and/or social media channels on a regular basis, to extract later, relevant data according to predetermined parameters (identify irregularities, mis/disinformation, hate speech, cyber violence against the minorities, etc.)
+In this interface, monitors can access all the articles collected and analyzed by the scraping process. Simply click on the "List of Articles" button in the side menu of the home interface.
+Scraping of data is an automated method for extracting and collecting data from websites and social media platforms using APIs. eMonitor+ team set up this process, configuring the platform to monitor specific websites and social media channels regularly. The platform scrape data using Crowdtangle, Twitter API, google API. The platform then collect relevant data based on dictionary of words or set of pages/accounts.
+
+
 ![3](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/3.png)  
 
-The monitors can define specific search criteria to narrow down the data collection process. 
- 
-These criteria include: 
-1.	The source platform (e.g., website, social media channel), 
-2.	The data source (e.g., a specific Twitter or Facebook page), 
-3.	The time frame for collecting and monitoring the data. 
-4.	It is also possible to set up keyword searches to facilitate the data collection process,
-5.	Additionally, observers can set up custom searches and save them for further use,
-6.	After the data is collected, the administrator can download it in the form of an Excel table for further analysis,
+Monitors can filter the posts and refine the data collection process, using the following set of search settings: 
 
-	Automatic analysis for hate speech and cyberviolence detection
-The platform uses an automatic analysis process, based on artificial intelligence to detect instances of hate speech and cyber violence. This process is carried out according to specific parameters set by the technical administrator,
+1. News platform (e.g., website, social media platform)
+2. Social media platform (e.g., Twitter, Facebook, Instgram)
+3. Period of time
+4. Keywords
+5. Custom search that can be saved for future use 
+The platform administrator can download the data in Excel table for further explorative analysis.
+
+
+
+III. Automatic Analysis for Hate Speech and online VAW
+The platform utilizes an automatic analysis using diffrent open source algorthims including, detoxify, perspective and PERT. But also internal hate speech anaylsis which uses"Classifier Chain" as internal classifier for hate speech analysis. This process is executed according to specific parameters set by the technical administrator.
+
+
 ![4](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/4.png) 
 
-The automated analysis of the article results in the detection of hate speech or violence against women or minorities in general.
+This process allow monitors and users to classify and filter content using machine learning making the data sample smaller
 ![5](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/5.png) 
  
  
- 
-The analysis process also classifies the speech as 'normal', 'offensive', 'abusive', or 'hateful', depending on the severity of the language used. 
-It can also detect and classify specific types of speech, such as 'insults' which are verbal attacks, 'toxicity' which refers to harmful or negative language, 'threats' which involve expressing an intent to harm someone or something, 'identity attacks' which involve targeted attacks on someone's personal characteristics, and 'profanity' which refers to the use of vulgar or offensive language.
+The analysis process also classifies the speech into categories such as 'normal', 'offensive', 'abusive', or 'hateful', depending on the severity of the language used. It can detect and classify specific types of speech, including:
+
+'Insults': verbal attacks,
+'Toxicity': harmful or negative language,
+'Threats': expressions of intent to harm someone or something,
+'Identity attacks': targeted attacks on someone's personal characteristics,
+'Profanity': the use of vulgar or offensive language.
  
 ![6](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/6.png)
  
-Based on the results of the automated analysis, the monitor has the option to either generate a new post or abstain,
+The filtering of posts based on machine learning enables monitors to add these posts to their workload for further analysis manually.
+
+
 ![7](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/7.png) 
 
-The form is pre-populated by default, and the monitor will complete the remaining fields, or update existing ones, if necessary,
+The form is pre-filled by default, and the monitors and users can complete the remaining fields or update existing ones if necessary.
+
+
+
 ## **Deployment** 
 
 
@@ -182,6 +189,8 @@ The apps need a number of environment variables that can be stored in a single `
 
 `EXTERNAL_TOKEN`=token for external APIs
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 The platform is founded on the efforts of UNDP Tunisia's electoral assistance project, which has designed and operated the platform since 2019. UNDP Regional Electoral Support project for the MENA region is scaling up the platform globally.   
 
 
