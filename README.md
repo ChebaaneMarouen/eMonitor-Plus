@@ -26,22 +26,24 @@ eMonitor+ uses artificial intelligence to track and analyse content on digital m
 
 ## **Components**
 
-I.	Dashboard 
-Main home page shows:
-1.	My posts: shows all posts anaylzed manually by the user
-2.	My false News: shows all potential false news that have been assigned to the factchecker by the team leader
-3.	Posts violations: allows the monitor to detect electoral violation on social media 
-4.	Monitoring violations: contains a table of all violations that have been added 
+I. The Dashboard Main Home Page displays the following:
+
+1- My Posts: Displays all posts analyzed manually by the user
+
+2- My False News: Shows all potential false news items assigned to the fact-checker by the team leader 
+
+3- Posts Violations: Allows the monitor to detect electoral violations on social media
+
+4- Monitoring Violations: Contains a table of all added violations
+
 
 ![1](https://github.com/MxNaruto/eMonitor-Plus/blob/master/images/1.png)
 
+Additionally, the main control interface features:
 
-The main control interface also displays:
-5.	Recently added news: shows recently collected data from social media platform
-6.	Confirmed electoral violations: containts all the electoral violations that have been already confirmed by the team supervisor 
+5- Recently Added News: Shows recently collected data from social media platforms.
 
-
-
+6- Confirmed Electoral Violations: Contains all the electoral violations that have been confirmed by the team supervisor.
 
 II.	Add new posts
 a.	Social Media Post Scraping and Automated Analysis
