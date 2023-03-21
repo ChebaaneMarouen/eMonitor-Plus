@@ -94,22 +94,23 @@ The form is pre-populated by default, and the monitor will complete the remainin
 * Install <a name="docker-compose">https://docs.docker.com/engine/install/</a> 
 * Go to config folder "compose-apps\apps"
 * If you want to launch all the services
- sudo docker-compose build
- sudo docker-compose up -d
+
+ `sudo docker-compose build`
+ `sudo docker-compose up -d`
 or
- sudo docker-compose up -d --build name_service
+ `sudo docker-compose up -d --build name_service`
 for example
- sudo docker-compose up -d --build elasticsearch
+ `sudo docker-compose up -d --build elasticsearch`
 To start our application database service
- sudo docker-compose up -d --build elasticsearch-manager
+ `sudo docker-compose up -d --build elasticsearch-manager`
 To launch the service that processes requests from our application database
- sudo docker-compose up -d --build rabbitmq
+ `sudo docker-compose up -d --build rabbitmq`
 To launch our exchange server between services.
- sudo docker-compose up -d --build galand-client
+ `sudo docker-compose up -d --build galand-client`
 To launch the service that manages the interface part of our platform (frontend)
- sudo docker-compose up -d --build galand-manager
+ `sudo docker-compose up -d --build galand-manager`
 To launch the service that manages the back-end part of our platform (backend)
- sudo docker-compose up -d --build nginx
+ `sudo docker-compose up -d --build nginx`
 To launch the service that manages the ports of our platform, you can configure it in the .env file
 
 
